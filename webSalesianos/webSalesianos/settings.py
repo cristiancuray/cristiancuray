@@ -23,6 +23,10 @@ SECRET_KEY = '(=@r33x^natpk-pja28nkkw8!%6$)u71p3vx@6vfn=fcw-@_pi'
 DEBUG = True
 
 TEMPLATE_DEBUG = True
+TEMPLATE_ROOT = (os.path.join(BASE_DIR,'/webSalesianos/template'),
+)
+
+
 
 ALLOWED_HOSTS = []
 
@@ -36,6 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'webSalesianos.apps.menuheader',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -58,14 +63,14 @@ WSGI_APPLICATION = 'webSalesianos.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, 'salesianos.sqlite3'),
     }
 }
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-EC'
 
 TIME_ZONE = 'UTC'
 
@@ -80,3 +85,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES = (os.path.join(BASE_DIR,'/webSalesianos/static'),
+)
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR,"/webSalesianos/media")
